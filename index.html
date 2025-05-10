@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main visualizer container -->
+    <div class="visualizer-container">
+        <!-- Canvas for drawing -->
+        <canvas id="visualizer-canvas"></canvas>
+        
+        <!-- File input and controls container -->
+        <div class="controls-container">
+            <!-- Audio file input -->
+            <div class="file-input-container">
+                <input type="file" id="audio-file" accept="audio/*" hidden>
+                <label for="audio-file" class="file-input-label">Choose Audio File</label>
+            </div>
+
+            <!-- Playback controls (hidden by default) -->
+            <div class="playback-controls hidden">
+                <!-- Progress bar -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                        <div class="progress-handle"></div>
+                    </div>
+                    <div class="time-display">
+                        <span class="current-time">0:00</span>
+                        <span class="duration">0:00</span>
+                    </div>
+                </div>
+
+                <!-- Control buttons -->
+                <div class="player-controls">
+                    <button class="control-btn seek-back">-5s</button>
+                    <button class="control-btn play-pause">▶</button>
+                    <button class="control-btn seek-forward">+5s</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Layer toggle buttons -->
+        <div class="layer-controls">
+            <button class="layer-btn" id="toggle-bg">BG</button>
+            <button class="layer-btn" id="toggle-vis">VIS</button>
+        </div>
+    </div>
+
+    <script src="scripts/main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+.visualizer-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#visualizer-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+.controls-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.file-input-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.file-input-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-input-label:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.playback-controls {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.playback-controls.visible {
+    opacity: 1;
+}
+
+.progress-container {
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff4d4d, #f9cb28);
+    border-radius: 2px;
+    position: relative;
+    transition: width 0.1s linear;
+}
+
+.progress-handle {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.progress-bar:hover .progress-handle {
+    opacity: 1;
+}
+
+.time-display {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.control-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.play-pause {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.layer-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    display: flex;
+    gap: 10px;
+}
+
+.layer-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.layer-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+
+.hidden {
+    display: none !important;
+}
