@@ -84,10 +84,10 @@ export default class HypnoticVortex {
 
   drawBackground(ctx, canvas, high) {
   // Define the frequency range and corresponding alpha values
-    const minFreq = 20;
+    const minFreq = 40;
     const maxFreq = 200;
-    const minAlpha = 0.0; // Fully transparent
-    const maxAlpha = 0.9; // Fully opaque
+    const minAlpha = 0.4; // Fully transparent
+    const maxAlpha = 0.6; // Fully opaque
 
     // Clamp the high-frequency value within the defined range
     const clampedHigh = Math.max(minFreq, Math.min(high, maxFreq));
